@@ -1,32 +1,35 @@
 import readline from "readline";
+import { exec } from "child_process"
+import { AzGroup } from "./az"
 
-export const Index = (): void => {
-    const [, , firstArg] = process.argv;
+const Index = (): void => {
 
-    if (!firstArg) {
-        console.error("Please pass one argument!!");
-        process.exit(1);
-    }
+    AzGroup();
 
-    const msg = `
-    Hello!! ${firstArg} san.
-    I am Toshihisa Tomatsu.
-    GitHub: https://github.com/toshi-toma
-    Twitter: https://twitter.com/toshi__toma
-  `;
+    //     if (!firstArg) {
+    //         console.error("Please pass one argument!!");
+    //         process.exit(1);
+    //     }
 
-    const rl = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout
-    });
+    //     const msg = `
+    //     Hello!! ${firstArg} san.
+    //     I am Toshihisa Tomatsu.
+    //     GitHub: https://github.com/toshi-toma
+    //     Twitter: https://twitter.com/toshi__toma
+    //   `;
 
-    console.log(msg);
+    //     const rl = readline.createInterface({
+    //         input: process.stdin,
+    //         output: process.stdout
+    //     });
 
-    rl.question("Please enter names for your project: ", answer => {
-        console.log(`Thank you!! Let's start ${answer}`);
+    //     console.log(msg);
 
-        rl.close();
-    });
+    //     rl.question("Please enter names for your project: ", answer => {
+    //         console.log(`Thank you!! Let's start ${answer}`);
+
+    //         rl.close();
+    //     });
 };
 
 Index();
