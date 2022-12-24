@@ -1,0 +1,39 @@
+{
+  "name": "az-wizard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "npm run build:live",
+    "build": "webpack && npm link",
+    "prod": "webpack && npm link && node dist/main.js",
+    "build:live": "nodemon --watch 'src/**/*.ts' --exec \"ts-node\" src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/takashiuesaka/az-wizard.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/takashiuesaka/az-wizard/issues"
+  },
+  "homepage": "https://github.com/takashiuesaka/az-wizard#readme",
+  "devDependencies": {
+    "@types/node": "^18.11.17",
+    "nodemon": "^2.0.20",
+    "ts-loader": "^9.4.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  },
+  "bin": {
+    "azw": "bin/entrypoint.js"
+  }
+}
